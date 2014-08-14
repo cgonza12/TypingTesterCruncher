@@ -4,15 +4,15 @@ TypingTesterCruncher
 R scripts for cleaning and combining TypingTester log output
 
 ##File Structure
-TypingTesterCruncher
-  - COMPILE.R
-  - CRUNCH.R
-  - charClass.R
-  - log.csv
-  - Participant Data (nothing in here other than the subfolders)
-    - iPad
-    - iPhone
-    - PC
+  -TypingTesterCruncher
+    - COMPILE.R
+    - CRUNCH.R
+    - charClass.R
+    - log.csv
+    - Participant Data (nothing in here other than the subfolders)
+      - iPad
+      - iPhone
+      - PC
 
 ##COMPILE.R
 
