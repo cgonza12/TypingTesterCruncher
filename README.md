@@ -30,3 +30,7 @@ Helper function that takes a length 1 character input and classifies as a letter
 ##log.csv
 
 Example log file that contains participant numbers and device presentation order
+
+## TypingTesterCruncher.Rproj
+
+project file that opens necessary scripts
