@@ -5,15 +5,15 @@
 #### Fors Marsh Group
 #### August, 2014 
 #######################################
-
+setwd("YOURDIRHERE/TypingTesterCruncher/")
 # load data cruncher function
-source("YOURDIRECTORYHERE/CRUNCH.R") #CHANGE THIS TO YOUR LOCATION!!!!!
-source("YOURDIRECTORYHERE/charClass.R") #CHANGE THIS TO YOUR LOCATION!!!!!
+source("CRUNCH.R") #CHANGE THIS TO YOUR LOCATION!!!!!
+source("charClass.R") #CHANGE THIS TO YOUR LOCATION!!!!!
 # point to the directory with the three folders (only!)
-setwd("YOURDIRECTORYHERE/Participant Data/") #CHANGE THIS TO YOUR LOCATION!!!!!
+setwd("Participant Data/") #CHANGE THIS TO YOUR LOCATION!!!!!
 
 #load helper package
-install.packages(plyr)
+# install.packages("plyr")
 library(plyr)
 
 # get folder names
@@ -26,7 +26,7 @@ outlist1=list()
 for(i in 1:length(folderlist)){
   # loop through each device folder
   # CHANGE THIS TO YOUR LOCATION!!!!!
-  setwd(paste0("YOURDIRECTORYHERE/Participant Data/",folderlist[i]))
+  setwd(paste0("YOURDIRHERE/TypingTesterCruncher/Participant Data/",folderlist[i]))
   
   # get file names out of device i's folder
   filelist = list.files()
@@ -76,7 +76,7 @@ out = ddply(out,.(pid,SubPhase,target,device),mutate,
 # sort by pid
 out = out[order(out$pid,out$device,out$trial),]
 # reset the working directory
-setwd("YOURDIRECTORYHERE/Participant Data/") #CHANGE THIS TO YOUR LOCATION!!!!!
+setwd("YOURDIRHERE/TypingTesterCruncher/") #CHANGE THIS TO YOUR LOCATION!!!!!
 
 
 # read in and transform log
@@ -84,7 +84,7 @@ setwd("YOURDIRECTORYHERE/Participant Data/") #CHANGE THIS TO YOUR LOCATION!!!!!
 ### Below is the code to incorporate additional participant data, like pw set and order
 ### not neccessary for pw performance analysis 
 
-log = read.csv("YOURDIRECTORYHERE/log.csv") #CHANGE THIS TO YOUR LOCATION!!!!!
+log = read.csv("log.csv") #CHANGE THIS TO YOUR LOCATION!!!!!
 # recode devices to numeric values
 out$devnumeric = out$device 
 out$devnumeric[out$devnumeric=="PC"] <- 1
@@ -101,7 +101,7 @@ out = ddply(out,.(pid,device),mutate,
 out$devnumeric <- NULL
 
 # reset working directory
-setwd("YOURDIRECTORYHERE")#CHANGE THIS TO YOUR LOCATION!!!!!
+setwd("YOURDIRHERE/TypingTesterCruncher/")#CHANGE THIS TO YOUR LOCATION!!!!!
 
 # write a csv file of the complete output
 write.csv(out,"out.csv")

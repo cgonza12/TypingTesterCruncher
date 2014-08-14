@@ -1,3 +1,9 @@
+#########################################################################
+#### Function to classify Length 1 strings as numbers, letters or symbols
+#### Christian Gonzalez
+#### Fors Marsh Group
+#### August, 2014 
+#########################################################################
 charClass = function(x){
   
   if(nchar(as.character(x))>1){
