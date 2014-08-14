@@ -4,7 +4,7 @@ TypingTesterCruncher
 R scripts for cleaning and combining TypingTester log output
 
 ##File Structure
-  -TypingTesterCruncher
+  - TypingTesterCruncher
     - COMPILE.R
     - CRUNCH.R
     - charClass.R
